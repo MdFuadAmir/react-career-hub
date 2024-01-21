@@ -1,4 +1,7 @@
+import PropTypes from 'prop-types';
 import "../../../src/CssBtn.css";
+
+
 
 const Category = ({ category }) => {
   const {logo, category_name, availability} = category;
@@ -19,5 +22,8 @@ const Category = ({ category }) => {
     
   );
 };
-
+Category.propTypes ={
+  category: PropTypes.array.isRequired,
+  
+}
 export default Category;

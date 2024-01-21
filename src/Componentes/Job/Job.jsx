@@ -1,6 +1,9 @@
 import "../../../src/CssBtn.css";
 import { SlLocationPin } from "react-icons/sl";
 import { AiOutlineDollar } from "react-icons/ai";
+import PropTypes from 'prop-types';
+
+
 const Job = ({ jobb }) => {
   const {
     logo,
@@ -40,5 +43,8 @@ const Job = ({ jobb }) => {
     </div>
   );
 };
+Job.propTypes = {
+    jobb: PropTypes.object.isRequired
+}
 
 export default Job;
