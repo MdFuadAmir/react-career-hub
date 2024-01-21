@@ -2,10 +2,12 @@ import "../../../src/CssBtn.css";
 import { SlLocationPin } from "react-icons/sl";
 import { AiOutlineDollar } from "react-icons/ai";
 import PropTypes from 'prop-types';
+import { Link } from "react-router-dom";
 
 
 const Job = ({ jobb }) => {
   const {
+    id,
     logo,
     job_title,
     company_name,
@@ -16,9 +18,9 @@ const Job = ({ jobb }) => {
   } = jobb;
   return (
     <div className="card card-compact bg-white border-2 border-[#E8E8E8] rounded-lg p-10 text-left">
-      <figure>
-        <img src={logo} alt="Company Logo" />
+      <figure >
       </figure>
+        <img className="text-left h-10 w-fit" src={logo} alt="Company Logo" />
       <div className="mt-10">
         <h2 className="text-2xl text-[#474747] font-extrabold">{job_title}</h2>
         <h2 className="text-xl mt-2 text-[#757575] font-semibold">
@@ -37,7 +39,9 @@ const Job = ({ jobb }) => {
             <p className="mr-6 flex items-center text-xl font-semibold text-[#757575]"><span className="mr-2"><AiOutlineDollar className="h-6 w-6"></AiOutlineDollar></span>{salary}</p>
         </div>
         <div className="card-actions ">
+          <Link to={`/job/${id}`}>
           <button className="btn button">View Details</button>
+          </Link>
         </div>
       </div>
     </div>
