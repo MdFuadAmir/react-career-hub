@@ -17,7 +17,7 @@ const CategoryList = () => {
         Explore thousands of job opportunities with all the information you
         need. Its your future
       </p>
-      <div>
+      <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6">
         {
             categorys.map(category => <Category key={category.id} category={category}></Category> )
         }
