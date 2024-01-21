@@ -2,6 +2,10 @@ import { useLoaderData, useParams } from "react-router-dom";
 import { FaCalendarAlt } from "react-icons/fa";
 import "../../../src/CssBtn.css";
 import { AiOutlineDollarCircle } from "react-icons/ai";
+import { FaPhoneVolume } from "react-icons/fa6";
+import { MdOutlineMailOutline } from "react-icons/md";
+import { IoLocationSharp } from "react-icons/io5";
+
 const JobDetails = () => {
   const jobs = useLoaderData();
   const { id } = useParams();
@@ -13,18 +17,17 @@ const JobDetails = () => {
     educational_requirements,
     experiences,
     contact_information,
-    phone,
-    email,
-    address,
     salary,
     job_title
   } = job;
   return (
     <div>
-      <h1 className="text-[#1A1919] text-3xl font-extrabold text-center">
-        Job Details
-      </h1>
-      <div className="gap-6 grid md:grid-cols-3">
+        <div className="detailBackImage place-items-center w-full h-40 items-center text-center p-10 mt-10">
+            <h1 className="text-4xl font-extrabold">Job Details</h1>
+
+        </div>
+        
+      <div className="gap-6 grid md:grid-cols-3 my-24">
         {/*  */}
         <div className="p-2 text-[#757575] md:col-span-2">
           <p className="mb-6">
@@ -59,14 +62,28 @@ const JobDetails = () => {
           <div className=" flex items-center gap-2">
           <FaCalendarAlt className=" text-[#9873Ff]"></FaCalendarAlt>
           <p className="text-[#474747] font-extrabold">Job Title: </p>
-          <p className="text-[#757575] font-medium"> {salary}</p>
+          <p className="text-[#757575] font-medium"> {job_title}</p>
           </div>
-          <h2 className="mt-8 mb-6 font-extrabold text-xl">Contact Information</h2>
+          <h2 className="mt-8 mb-6 font-extrabold text-xl">Contact Information</h2> <hr />
+          <div className=" mt-6 flex items-center gap-2">
+          <FaPhoneVolume className=" text-[#9873Ff]"></FaPhoneVolume>
+          <p className="text-[#474747] font-extrabold">Phone: </p>
+          <p className="text-[#757575] font-medium"> {contact_information.phone}</p>
+          </div>
+          <div className="mt-4 flex items-center gap-2">
+          <MdOutlineMailOutline className=" text-[#9873Ff]"></MdOutlineMailOutline>
+          <p className="text-[#474747] font-extrabold">Email: </p>
+          <p className="text-[#757575] font-medium"> {contact_information.email}</p>
+          </div>
+          <div className="mt-4 flex items-center gap-2">
+          <IoLocationSharp className=" text-[#9873Ff]"></IoLocationSharp>
+          <p className="text-[#474747] font-extrabold">Address: </p>
+          <p className="text-[#757575] font-medium"> {contact_information.address}</p>
+          </div>
+
         </div>
         <button className="text-center w-full button p-3 rounded-lg mt-6">Apply Now</button>
-        </div>
-        
-        
+        </div>     
       </div>
     </div>
   );
