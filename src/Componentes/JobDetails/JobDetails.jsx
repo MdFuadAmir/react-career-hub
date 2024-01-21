@@ -22,9 +22,11 @@ const JobDetails = () => {
   } = job;
   return (
     <div>
-        <div className="detailBackImage place-items-center w-full h-40 items-center text-center p-10 mt-10">
-            <h1 className="text-4xl font-extrabold">Job Details</h1>
+      <div className="">
 
+      </div>
+        <div className="detailBackImage p-10 mt-8  w-full h-28 items-center text-center">
+            <h1 className="text-4xl font-extrabold">Job Details</h1>
         </div>
         
       <div className="gap-6 grid md:grid-cols-3 my-24">

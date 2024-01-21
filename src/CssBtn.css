@@ -15,7 +15,6 @@
 }
 .detailBackImage{
     background-image: url('https://i.imgur.com/WN9W0iG.png');
-    background-size: contain;
     background-repeat: no-repeat;
-    
+    background-size: contain;
 }
