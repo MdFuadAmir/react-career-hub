@@ -5,6 +5,10 @@ import { AiOutlineDollarCircle } from "react-icons/ai";
 import { FaPhoneVolume } from "react-icons/fa6";
 import { MdOutlineMailOutline } from "react-icons/md";
 import { IoLocationSharp } from "react-icons/io5";
+import { ToastContainer, toast } from 'react-toastify';
+import 'react-toastify/dist/ReactToastify.css';
+import { saveJobApplication } from "../../Utility/localStore";
+
 
 const JobDetails = () => {
   const jobs = useLoaderData();
@@ -20,6 +24,11 @@ const JobDetails = () => {
     salary,
     job_title
   } = job;
+
+  const handleApplyJob = () =>{
+    saveJobApplication(idInt);
+    toast ('You have apply successfully');
+  }
   return (
     <div>
       <div className="">
@@ -57,7 +66,7 @@ const JobDetails = () => {
           </h2>
           <hr />
           <div className=" mt-6 mb-4 flex items-center gap-2">
-          <AiOutlineDollarCircle className="text-[#9873Ff]"></AiOutlineDollarCircle>
+          <AiOutlineDollarCircle className=" text-[#9873Ff]"></AiOutlineDollarCircle>
           <p className="text-[#474747] font-extrabold">Sallary: </p>
           <p className="text-[#757575] font-medium"> {salary}</p>
           </div>
@@ -78,14 +87,14 @@ const JobDetails = () => {
           <p className="text-[#757575] font-medium"> {contact_information.email}</p>
           </div>
           <div className="mt-4 flex items-center gap-2">
-          <IoLocationSharp className=" text-[#9873Ff]"></IoLocationSharp>
+          <IoLocationSharp className="h-6 w-6 text-[#9873Ff]"></IoLocationSharp>
           <p className="text-[#474747] font-extrabold">Address: </p>
           <p className="text-[#757575] font-medium"> {contact_information.address}</p>
           </div>
-
         </div>
-        <button className="text-center w-full button p-3 rounded-lg mt-6">Apply Now</button>
-        </div>     
+        <button onClick={handleApplyJob} className="text-center w-full button p-3 rounded-lg mt-6">Apply Now</button>
+        </div>  
+        <ToastContainer></ToastContainer>   
       </div>
     </div>
   );
