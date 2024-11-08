@@ -8,6 +8,7 @@ import { IoLocationSharp } from "react-icons/io5";
 import { ToastContainer, toast } from 'react-toastify';
 import 'react-toastify/dist/ReactToastify.css';
 import { saveJobApplication } from "../../Utility/localStore";
+import { Helmet } from "react-helmet-async";
 
 
 const JobDetails = () => {
@@ -31,8 +32,10 @@ const JobDetails = () => {
   }
   return (
     <div>
-      <div className="">
-
+      <Helmet>
+      <title>Career hub | JobDetails</title>
+      </Helmet>
+      <div>
       </div>
         <div className="detailBackImage p-10 mt-8  w-full h-28 items-center text-center">
             <h1 className="text-4xl font-extrabold">Job Details</h1>
@@ -95,7 +98,7 @@ const JobDetails = () => {
         <button onClick={handleApplyJob} className="text-center w-full button p-3 rounded-lg mt-6">Apply Now</button>
         </div>  
         <ToastContainer></ToastContainer>   
-      </div>
+    </div>
     </div>
   );
 };

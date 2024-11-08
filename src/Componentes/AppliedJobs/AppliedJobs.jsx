@@ -4,6 +4,7 @@ import { useEffect, useState } from "react";
 import { getStoredJobApplication } from "../../Utility/localStore";
 import ApplyJobDetails from "../ApplyJobsDetails/ApplyJobDetails";
 import { IoIosArrowDown } from "react-icons/io";
+import { Helmet } from "react-helmet-async";
 
 const AppliedJobs = () => {
   const jobs = useLoaderData();
@@ -42,6 +43,9 @@ const AppliedJobs = () => {
 
   return (
     <div>
+      <Helmet>
+      <title>Career hub | ApplyedJobs</title>
+      </Helmet>
       <div className="detailBackImage w-full h-32 p-10 mt-8 mb-40">
         <h1 className="text-3xl font-extrabold text-center">Applied Jobs</h1>
       </div>
